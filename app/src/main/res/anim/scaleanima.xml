@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fromXScale="0.0"
+        android:toXScale="1.4"
+        android:fromYScale="0.0"
+        android:toYScale="1.4"
+        android:pivotX="50"
+        android:pivotY="50"
+        android:duration="700"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+    />
+    <!--
+
+    用java表达
+    scaleAnim = new ScaleAnimation(0.0f,1.4f,0.0f,1.4f,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+    ScaleAnimation.setInterpolator(new BounceInterpolator());
+    scaleAnim.setDuration(700);
+    -->
+
+    <!--
+    android:fromXScale    起始的X方向上相对自身的缩放比例，浮点值，比如1.0代表自身无变化，0.5代表起始时缩小一倍，2.0代表放大一倍；
+    android:toXScale      结尾的X方向上相对自身的缩放比例，浮点值；
+    android:fromYScale    起始的Y方向上相对自身的缩放比例，浮点值，
+    android:toYScale      结尾的Y方向上相对自身的缩放比例，浮点值；
+    android:pivotX       缩放起点X轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p，
+                            当为数值时，表示在当前View的左上角，即原点处加上50px，做为起始缩放点；
+                            如果是50%，表示在当前控件的左上角加上自己宽度的50%做为起始点；
+                            如果是50%p，那么就是表示在当前的左上角加上父控件宽度的50%做为起始点x轴坐标。
+    android:pivotY       缩放起点Y轴坐标，取值及意义跟android:pivotX一样。
+
+    Animation类的属性       对应函数
+    android:duration      setDuration(long)   	      动画持续时间，以毫秒为单位 
+    android:fillAfter     setFillAfter(boolean)          如果设置为true，控件动画结束时，将保持动画最后时的状态
+    android:fillBefore    setFillBefore(boolean)	       如果设置为true,控件动画结束时，还原到开始动画前的状态
+    android:fillEnabled    setFillEnabled(boolean)	       与android:fillBefore 效果相同，都是在动画结束时，将控件还原到初始化状态
+    android:repeatCount    setRepeatCount(int)	           重复次数
+    android:repeatMode    setRepeatMode(int)	           重复类型，有reverse和restart两个值，取值为RESTART或 REVERSE，必须与repeatCount一起使用才能看到效果。因为这里的意义是重复的类型，即回放时的动作。
+    android:interpolator   setInterpolator(Interpolator) 设定插值器，其实就是指定的动作效果，比如弹跳效果等
+    android:valueFrom:                                     初始动化值；取值范围为float,int和color，如果取值为float对应的值样式应该为89.0，取值为Int时，对应的值样式为：89;当取值为clolor时，对应的值样式为 #333333;
+    android:valueTo：                                      动画结束值；取值范围同样是float,int和color这三种类型的值；
+    android:startOffset：   setStartDelay()                动画激活延时；对应代码中的startDelay(long delay)函数；
+    android:valueType：                                    表示参数值类型，取值为intType和floatType；与android:valueFrom、android:valueTo相对应。为color类型的值，那么不需要设置这个参数。
+
+
+    Interpolator:
+    AccelerateDecelerateInterpolator	@android:anim/accelerate_decelerate_interpolator    在动画开始与介绍的地方速率改变比较慢，在中间的时候加速
+    AccelerateInterpolator	            @android:anim/accelerate_interpolator               在动画开始的地方速率改变比较慢，然后开始加速
+    AnticipateInterpolator	            @android:anim/anticipate_interpolator               开始的时候向后然后向前甩
+    AnticipateOvershootInterpolator 	@android:anim/anticipate_overshoot_interpolator     开始的时候向后然后向前甩一定值后返回最后的值
+    BounceInterpolator	                @android:anim/bounce_interpolator                   动画结束的时候弹起
+    CycleInterpolator	                @android:anim/cycle_interpolator                    动画循环播放特定的次数，速率改变沿着正弦曲线
+    DecelerateInterpolator	            @android:anim/decelerate_interpolator               动画开始的地方快然后慢
+    LinearInterpolator	                @android:anim/linear_interpolator                   以常量速率改变
+    OvershootInterpolator	            @android:anim/overshoot_interpolator                向前甩一定值后再回到原来位置
+    -->

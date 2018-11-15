@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="3000"
+    android:fillAfter="true"
+
+    >
+    <alpha
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0"
+        />
+    <rotate
+        android:toDegrees="-650"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        />
+    <translate
+        android:fromXDelta="0"
+        android:toXDelta="0"
+        android:fromYDelta="0"
+        android:toYDelta="500"
+        />
+</set>
+
+    <!--
+    alphaAnim = new AlphaAnimation(1.0f,0.0f);
+    translateAnim = new TranslateAnimation(Animation.ABSOLUTE,0,Animation.ABSOLUTE,0,Animation.ABSOLUTE,0,Animation.ABSOLUTE,500);
+    rotateAnim = new RotateAnimation(0, 720, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+
+    setAnim=new AnimationSet(true);
+    setAnim.addAnimation(alphaAnim);
+    setAnim.addAnimation(translateAnim);
+    setAnim.addAnimation(rotateAnim);
+
+    setAnim.setDuration(3000);
+    setAnim.setFillAfter(true);
+
+    -->

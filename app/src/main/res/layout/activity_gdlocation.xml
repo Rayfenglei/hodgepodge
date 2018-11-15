@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GDLocations.GDLocationActivity">
+
+    <Button
+        android:id="@+id/normal_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/gaode_location_mapview"
+        android:text="正常地图"
+      />
+
+    <Button
+        android:id="@+id/satellite_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/normal_map"
+        android:text="卫星地图"
+       />
+
+    <Button
+        android:id="@+id/night_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/satellite_map"
+        android:text="夜间地图"
+      />
+    <com.amap.api.maps.MapView
+        android:id="@+id/gaode_location_mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        >
+    </com.amap.api.maps.MapView>
+</android.support.constraint.ConstraintLayout>

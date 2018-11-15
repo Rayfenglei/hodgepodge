@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXDelta="0"
+    android:toXDelta="-80"
+    android:fromYDelta="0"
+    android:toYDelta="200"
+    android:duration="2000"
+    android:fillBefore="true"
+    />
+    <!--
+    对应java代码
+    translateAnim = new TranslateAnimation(Animation.ABSOLUTE, 0, Animation.ABSOLUTE, -80,
+		Animation.ABSOLUTE, 0, Animation.ABSOLUTE, 200);
+    translateAnim.setDuration(2000);
+    translateAnim.setFillBefore(true);
+
+    -->
+    <!--
+    android:fromXDelta     起始点X轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p.
+    android:fromYDelta     起始点Y轴从标，可以是数值、百分数、百分数p 三种样式；
+    android:toXDelta      结束点X轴坐标
+    android:toYDelta      结束点Y轴坐标
+    -->

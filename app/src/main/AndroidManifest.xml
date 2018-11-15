@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.f2846843.myapplication">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name=".utils.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="g1ttLioC9R3CB5e79ehHgacvyEb7Bact" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="05926b8b78e99fc83af48e59f2e51e04" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".recycleview.RecycleActivity"
+            android:label="RecycleActivity"
+            android:theme="@style/NoAppTheme" />
+        <activity android:name=".ClientActivity" />
+        <activity
+            android:name=".ThreadActivity"
+            android:label="@string/title_activity_thread" />
+        <activity
+            android:name=".SQLite.OrderActivity"
+            android:label="@string/title_activity_sql" />
+        <activity
+            android:name=".Animation.AnimationActivity"
+            android:label="@string/title_activity_animation" />
+        <activity android:name=".Animation.LayoutAnimationActivity" />
+        <activity android:name=".Fragments.FragmentsActivity" />
+        <activity android:name=".Download.DownloadActivity" />
+
+        <service
+            android:name=".Download.DownloadService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".Web.GetUrlActivity" />
+        <activity android:name=".Parsing.ParseActivity" />
+        <activity
+            android:name=".MaterailU.MaterailActivity"
+            android:theme="@style/NoAppTheme" />
+
+        <receiver
+            android:name=".AlarmManager.MyReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".AlarmManager.MyReceiver2"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".AlarmManager.AlarmSearchActivity" />
+        <activity android:name=".ViewPagerActivity" />
+        <activity android:name=".BannerView.BannerActivity" />
+
+        <service android:name=".RemoteViews.TimerService" />
+
+        <receiver android:name=".RemoteViews.WidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/remote_widget" />
+        </receiver>
+
+        <activity android:name=".BDLocations.BDLocationActivity" />
+        <activity android:name=".BDLocations.BDNavigationActivity" />
+        <activity android:name=".BDLocations.NavigationActivity" />
+        <activity android:name=".LocationsActivity" />
+        <activity android:name=".GDLocations.GDLocationActivity"></activity>
+    </application>
+
+</manifest>

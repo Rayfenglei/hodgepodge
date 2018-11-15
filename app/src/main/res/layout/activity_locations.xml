@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LocationsActivity">
+
+
+    <Button
+        android:id="@+id/open_map_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="调用第三方"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/baidu_location_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="百度定位"
+        app:layout_constraintStart_toEndOf="@+id/open_map_btn"
+         />
+
+    <Button
+        android:id="@+id/baidu_navigation_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="百度导航"
+        app:layout_constraintStart_toEndOf="@+id/baidu_location_btn"
+        />
+    <Button
+        android:id="@+id/gaode_location_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="高德定位"
+        app:layout_constraintTop_toBottomOf="@+id/open_map_btn"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

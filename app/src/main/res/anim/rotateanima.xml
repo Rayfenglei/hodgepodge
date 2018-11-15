@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:toDegrees="-650"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:duration="3000"
+    android:fillAfter="true"/>
+
+    <!--
+    对应java代码
+    rotateAnim = new RotateAnimation(0, -650, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+    rotateAnim.setDuration(3000);
+    rotateAnim.setFillAfter(true);
+    -->
+
+    <!--
+    android:fromDegrees     开始旋转的角度位置，正值代表顺时针方向度数，负值代码逆时针方向度数
+    android:toDegrees      结束时旋转到的角度位置，正值代表顺时针方向度数，负值代码逆时针方向度数
+    android:pivotX        缩放起点X轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p
+    android:pivotY        缩放起点Y轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p
+
+    -->
