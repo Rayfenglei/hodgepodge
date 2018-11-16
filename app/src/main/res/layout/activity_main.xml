@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <com.example.f2846843.myapplication.Bean.MyButton
+        <com.example.ray.myapplication.Bean.MyButton
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_weight="1"
