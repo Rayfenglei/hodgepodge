@@ -9,14 +9,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.example.f2846843.myapplication.GDLocations.GDPoiFragment;
 import com.example.f2846843.myapplication.R;
 
 public class FragmentsActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button button1,button2;
+    private Button button1,button2,button3;
     private FragmentManager mFragmentManager;
     private FrameLayout framelayout;
-    private Fragment mFragmentOne,mFragmentTwo, fragmentNow;
+    private Fragment mFragmentOne,mFragmentTwo,mfragment,fragmentNow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +30,15 @@ public class FragmentsActivity extends AppCompatActivity implements View.OnClick
     private void init(){
         button1 = findViewById(R.id.one_fragment_btn);
         button2 = findViewById(R.id.two_fragment_btn);
+        button3 = findViewById(R.id.gaode_poi_fragment_btn);
         framelayout = findViewById(R.id.fragment_layout);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
         //实例化
         mFragmentOne = new FragmentOne();
         mFragmentTwo = new FragmentTwo();
+        mfragment = new GDPoiFragment();
         //获取管理
         mFragmentManager = getSupportFragmentManager();
     }
@@ -79,6 +83,16 @@ public class FragmentsActivity extends AppCompatActivity implements View.OnClick
                     fragmentTransaction.addToBackStack(null);
                 }
                 fragmentNow = mFragmentTwo;
+                fragmentTransaction.commit();
+                break;
+            case R.id.gaode_poi_fragment_btn:
+                if (mfragment.isAdded()) {
+                    fragmentTransaction.hide(fragmentNow).show(mfragment);
+                } else {
+                    fragmentTransaction.hide(fragmentNow).add(R.id.fragment_layout, mfragment);
+                    fragmentTransaction.addToBackStack(null);
+                }
+                fragmentNow = mfragment;
                 fragmentTransaction.commit();
                 break;
             default:

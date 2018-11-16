@@ -34,7 +34,7 @@ public class ListAdapter extends BaseAdapter implements Filterable {
         if (view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.serch_item, null);
             holder = new ViewHolder();
-            holder.tv_ss =  view.findViewById(R.id.serch_text);
+            holder.tv_ss =  view.findViewById(R.id.search_text);
             view.setTag(holder);
         }
         holder = (ViewHolder) view.getTag();

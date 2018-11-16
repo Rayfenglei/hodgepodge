@@ -29,6 +29,13 @@
         app:layout_constraintStart_toEndOf="@+id/satellite_map"
         android:text="夜间地图"
       />
+    <Button
+        android:id="@+id/poi_search_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/night_map"
+        android:text="搜索"
+        />
     <com.amap.api.maps.MapView
         android:id="@+id/gaode_location_mapview"
         android:layout_width="match_parent"
@@ -36,4 +43,5 @@
         android:clickable="true"
         >
     </com.amap.api.maps.MapView>
+
 </android.support.constraint.ConstraintLayout>

@@ -1,13 +1,20 @@
 package com.example.f2846843.myapplication.GDLocations;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
+
 import com.amap.api.location.AMapLocation;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.CameraUpdateFactory;
@@ -19,14 +26,26 @@ import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.maps.model.PolylineOptions;
+import com.amap.api.services.core.AMapException;
+import com.amap.api.services.help.Inputtips;
+import com.amap.api.services.help.InputtipsQuery;
+import com.amap.api.services.help.Tip;
 import com.example.f2846843.myapplication.R;
 import com.example.f2846843.myapplication.utils.MyApplication;
 
-public class GDLocationActivity extends AppCompatActivity implements View.OnClickListener,AMap.OnMyLocationChangeListener,AMap.OnCameraChangeListener{
+import java.util.List;
+import java.util.Vector;
+
+public class GDLocationActivity extends AppCompatActivity implements View.OnClickListener,AMap.OnMyLocationChangeListener,
+        AMap.OnCameraChangeListener{
     private static final String TAG = "GDLocationActivity";
-    MapView mapView;
-    AMap aMap;
-    Button mNormal,mSatellite,mNight;
+    private MapView mapView;
+    private AMap aMap;
+    private Button mNormal,mSatellite,mNight,mSearch;
+    private FrameLayout frameLayout;
+    private FragmentManager mFragmentManager;
+    private Fragment fragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +82,11 @@ public class GDLocationActivity extends AppCompatActivity implements View.OnClic
         mNormal = findViewById(R.id.normal_map);
         mSatellite = findViewById(R.id.satellite_map);
         mNight = findViewById(R.id.night_map);
+        mSearch = findViewById(R.id.poi_search_btn);
         mNormal.setOnClickListener(this);
         mSatellite.setOnClickListener(this);
         mNight.setOnClickListener(this);
+        mSearch.setOnClickListener(this);
     }
 
     @Override
@@ -79,6 +100,8 @@ public class GDLocationActivity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.night_map:
                 aMap.setMapType(AMap.MAP_TYPE_NIGHT);
+            case R.id.poi_search_btn:
+                startActivity(new Intent(this,GDSearchActivity.class));
                 break;
         }
     }
@@ -132,4 +155,5 @@ public class GDLocationActivity extends AppCompatActivity implements View.OnClic
                 .geodesic(true).color(Color.RED));
 
     }
+
 }

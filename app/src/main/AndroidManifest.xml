@@ -103,7 +103,8 @@
         <activity android:name=".BDLocations.BDNavigationActivity" />
         <activity android:name=".BDLocations.NavigationActivity" />
         <activity android:name=".LocationsActivity" />
-        <activity android:name=".GDLocations.GDLocationActivity"></activity>
+        <activity android:name=".GDLocations.GDLocationActivity" />
+        <activity android:name=".GDLocations.GDSearchActivity"></activity>
     </application>
 
 </manifest>
