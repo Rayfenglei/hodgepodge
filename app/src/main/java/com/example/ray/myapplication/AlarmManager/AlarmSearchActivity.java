@@ -2,7 +2,11 @@ package com.example.ray.myapplication.AlarmManager;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,6 +30,7 @@ import java.util.TimeZone;
 public class AlarmSearchActivity extends AppCompatActivity implements View.OnClickListener{
     private AlarmManager am,bm;
     private Button mOneBtn,mTwoBtn;
+    private Button mInsertBtn,mQueryBtn;
     private EditText et_ss;
     private ListView lsv_ss;
     private List<String> list = new ArrayList<>();
@@ -44,11 +49,17 @@ public class AlarmSearchActivity extends AppCompatActivity implements View.OnCli
         mOneBtn = findViewById(R.id.alarm_receiver_one);
         mTwoBtn = findViewById(R.id.alarm_receiver_two);
 
+        mInsertBtn = findViewById(R.id.contentprovider_insert);
+        mQueryBtn = findViewById(R.id.contentprovider_query);
+
         et_ss =  findViewById(R.id.search_view);// EditText控件
         lsv_ss = findViewById(R.id.listView);// ListView控件
 
         mOneBtn.setOnClickListener(this);
         mTwoBtn.setOnClickListener(this);
+
+        mInsertBtn.setOnClickListener(this);
+        mQueryBtn.setOnClickListener(this);
     }
 
     @Override
@@ -59,6 +70,12 @@ public class AlarmSearchActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.alarm_receiver_two:
                 TwoAlarm();
+                break;
+            case R.id.contentprovider_insert:
+                insertContentProvider();
+                break;
+            case R.id.contentprovider_query:
+                queryContentProvider();
                 break;
             default:
                 break;
@@ -207,4 +224,50 @@ public class AlarmSearchActivity extends AppCompatActivity implements View.OnCli
         });
     }
 
+    /*---------ContentProvider---------*/
+    //insert
+    private void insertContentProvider(){
+        //设置uri
+        Uri uri_user = Uri.parse("content://cn.scu.provider/user");
+        //获取ContentResolver
+        ContentResolver resolver = getContentResolver();
+
+        //插入数据
+        ContentValues values = new ContentValues();
+        values.put("_id",3);
+        values.put("name","huohuo");
+        // 通过ContentResolver 根据URI 向ContentProvider中插入数据
+        resolver.insert(uri_user,values);
+
+
+
+    }
+    //query
+    private void queryContentProvider(){
+        //设置uri
+        Uri uri_user = Uri.parse("content://cn.scu.provider/user");
+        //获取ContentResolver
+        ContentResolver resolver = getContentResolver();
+
+
+        // 通过ContentResolver 向ContentProvider中查询数据
+        Cursor cursor = resolver.query(uri_user, new String[]{"_id","name"}, null, null, null);
+        while (cursor.moveToNext()){
+            System.out.println("query book:" + cursor.getInt(0) +" "+ cursor.getString(1));
+            // 将表中数据全部输出
+        }
+        // 关闭游标
+        cursor.close();
+    }
+
+    //delete
+    private void deleteContenProvider(){
+        //设置uri
+        Uri uri_user = Uri.parse("content://cn.scu.provider/user");
+        //获取ContentResolver
+        ContentResolver resolver = getContentResolver();
+
+        //删除数据
+        resolver.delete(uri_user,"_id=?",new String[]{ String.valueOf(2)});
+    }
 }

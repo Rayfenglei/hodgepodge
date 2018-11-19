@@ -98,7 +98,13 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/remote_widget" />
         </receiver>
-
+        
+        <provider
+            android:authorities = "cn.scu.provider"
+            android:name = ".ContentProviders.Provider"
+            />
+        
+        
         <activity android:name=".BDLocations.BDLocationActivity" />
         <activity android:name=".BDLocations.BDNavigationActivity" />
         <activity android:name=".BDLocations.NavigationActivity" />
