@@ -6,7 +6,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
 
@@ -28,7 +27,7 @@ public class DrawPoint extends View {
             mPaint.setAntiAlias(true);          //抗锯齿
             mPaint.setColor(getResources().getColor(R.color.colorPrimary));//画笔颜色
             mPaint.setStyle(Paint.Style.FILL);  //画笔风格
-            canvas.drawCircle(500,800,mPoint.getRadius(),mPaint);
+            canvas.drawCircle(100,400,mPoint.getRadius(),mPaint);
         }
     }
 

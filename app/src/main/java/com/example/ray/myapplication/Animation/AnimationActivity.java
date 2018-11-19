@@ -79,8 +79,8 @@ public class AnimationActivity extends Activity implements View.OnClickListener{
                 doColorAnimation();
                 doCharAnimation();*/
                 mDrawPoint.doPointAnimation();
-                doRotation();
-                doAlpha();
+                //doRotation();
+                //doAlpha();
                 break;
             case R.id.propertyvalues_btn:
                 //animation  = AnimationUtils.loadAnimation(this, R.anim.alphaanima);

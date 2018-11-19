@@ -47,6 +47,10 @@ public class MyButton extends android.support.v7.widget.AppCompatImageButton {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        int rawX = (int) event.getRawX();
+        int rawY = (int) event.getRawY();
+        int lastX = 0;
+        int lastY = 0;
         switch (event.getAction())
         {
             case MotionEvent.ACTION_DOWN:
@@ -56,6 +60,10 @@ public class MyButton extends android.support.v7.widget.AppCompatImageButton {
                     countMaxRadio();
                     isPushButton = true;
                     postInvalidateDelayed(INVALIDATE_DURATION);
+
+                    //记录触摸点的坐标
+                    lastX = rawX;
+                    lastY = rawY;
                 break;
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
@@ -66,6 +74,16 @@ public class MyButton extends android.support.v7.widget.AppCompatImageButton {
                 }else {
                     clearData();
                 }
+                break;
+            case MotionEvent.ACTION_MOVE:
+                //计算偏移量
+                int officeX = rawX - lastX;
+                int officeY = rawY - lastY;
+                //在当前的left,top,right,bottom基础上加上偏移量
+                layout(getLeft()+officeX,getTop()+officeY,getRight()+officeX,getBottom()+officeY);
+                //重新设置初始值
+                lastX = rawX;
+                lastY = rawY;
                 break;
         }
         return super.onTouchEvent(event);
