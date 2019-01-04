@@ -63,89 +63,90 @@ public class OKhttp extends AsyncTask<String,Integer,Integer> {
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
                     String data = response.body().string(); //获取返回的数据
+                    Log.i("onResponse",data);
                 }
             });
 
-            //3.同步get
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Response response = call.execute();
-                        String data = response.body().string();
-                    }catch (IOException e){
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-            //POST
-            OkHttpClient okHttpClientPost = new OkHttpClient();
-            MediaType mediaType = MediaType.parse("text/x-markdown; charset=utf-8");//传递的数据类型
-
-            //任何类型
-            RequestBody requestPostString = new FormBody.Builder()
-                    .add("username","haha")
-                    .build();
-            Request requestPostS = new Request.Builder()
-                    .url("https://api.github.com/markdown/raw")
-                    .post(requestPostString)
-                    .build();
-
-            //提交String数据
-            //1
-            String requestBodyString = "I am Jdqm.";
-            Request requestPost = new Request.Builder()
-                    .url("https://api.github.com/markdown/raw")
-                    .post(RequestBody.create(mediaType, requestBodyString))
-                    .build();
-
-
-
-            // 提交流
-            RequestBody requestBody = new RequestBody() {
-                @Nullable
-                @Override
-                public MediaType contentType() { return MediaType.parse("text/x-markdown; charset=utf-8"); }
-                @Override
-                public void writeTo(BufferedSink sink) throws IOException { sink.writeUtf8("I am Jdqm."); }
-            };
-            Request requestStream = new Request.Builder()
-                    .url("https://api.github.com/markdown/raw")
-                    .post(requestBody)
-                    .build();
-
-            //提交文件
-            File file = new File("test.md");
-            Request requestFile = new Request.Builder()
-                    .url("https://api.github.com/markdown/raw")
-                    .post(RequestBody.create(mediaType, file))
-                    .build();
-
-            /*
-            * okHttpClientPost.newCall(requestStream).enqueue(new Callback(){}) 提交流
-            * okHttpClientPost.newCall(requestFile).enqueue(new Callback(){}) 提交文件
-            *
-            */
-
-            okHttpClientPost.newCall(requestPost).enqueue(new Callback() {
-                @Override
-                public void onFailure(Call call, IOException e) {
-                    Log.d(TAG, "onFailure: ");
-                }
-
-                @Override
-                public void onResponse(Call call, Response response) throws IOException {
-                    Log.d(TAG, response.protocol() + " " +response.code() + " " + response.message());
-                    Headers headers = response.headers(); //
-                    for (int i = 0; i < headers.size(); i++) {
-                        Log.d(TAG, headers.name(i) + ":" + headers.value(i));
-                    }
-                    Log.d(TAG, "onResponse: " + response.body().string());
-                }
-            });
-
-
+//            //3.同步get
+//            new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    try {
+//                        Response response = call.execute();
+//                        String data = response.body().string();
+//                    }catch (IOException e){
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//
+//            //POST
+//            OkHttpClient okHttpClientPost = new OkHttpClient();
+//            MediaType mediaType = MediaType.parse("text/x-markdown; charset=utf-8");//传递的数据类型
+//
+//            //任何类型
+//            RequestBody requestPostString = new FormBody.Builder()
+//                    .add("username","haha")
+//                    .build();
+//            Request requestPostS = new Request.Builder()
+//                    .url("https://api.github.com/markdown/raw")
+//                    .post(requestPostString)
+//                    .build();
+//
+//            //提交String数据
+//            //1
+//            String requestBodyString = "I am Jdqm.";
+//            Request requestPost = new Request.Builder()
+//                    .url("https://api.github.com/markdown/raw")
+//                    .post(RequestBody.create(mediaType, requestBodyString))
+//                    .build();
+//
+//
+//
+//            // 提交流
+//            RequestBody requestBody = new RequestBody() {
+//                @Nullable
+//                @Override
+//                public MediaType contentType() { return MediaType.parse("text/x-markdown; charset=utf-8"); }
+//                @Override
+//                public void writeTo(BufferedSink sink) throws IOException { sink.writeUtf8("I am Jdqm."); }
+//            };
+//            Request requestStream = new Request.Builder()
+//                    .url("https://api.github.com/markdown/raw")
+//                    .post(requestBody)
+//                    .build();
+//
+//            //提交文件
+//            File file = new File("test.md");
+//            Request requestFile = new Request.Builder()
+//                    .url("https://api.github.com/markdown/raw")
+//                    .post(RequestBody.create(mediaType, file))
+//                    .build();
+//
+//            /*
+//            * okHttpClientPost.newCall(requestStream).enqueue(new Callback(){}) 提交流
+//            * okHttpClientPost.newCall(requestFile).enqueue(new Callback(){}) 提交文件
+//            *
+//            */
+//
+//            okHttpClientPost.newCall(requestPost).enqueue(new Callback() {
+//                @Override
+//                public void onFailure(Call call, IOException e) {
+//                    Log.d(TAG, "onFailure: ");
+//                }
+//
+//                @Override
+//                public void onResponse(Call call, Response response) throws IOException {
+//                    Log.d(TAG, response.protocol() + " " +response.code() + " " + response.message());
+//                    Headers headers = response.headers(); //
+//                    for (int i = 0; i < headers.size(); i++) {
+//                        Log.d(TAG, headers.name(i) + ":" + headers.value(i));
+//                    }
+//                    Log.d(TAG, "onResponse: " + response.body().string());
+//                }
+//            });
+//
+//
         }
         catch(Exception e)
         {

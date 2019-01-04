@@ -34,6 +34,7 @@ import com.example.ray.myapplication.Fragments.FragmentsActivity;
 import com.example.ray.myapplication.BDLocations.BDNavigationActivity;
 import com.example.ray.myapplication.BDLocations.BDLocationActivity;
 import com.example.ray.myapplication.BDLocations.NavigationActivity;
+import com.example.ray.myapplication.HttpConnect.OKhttp;
 import com.example.ray.myapplication.MaterailU.MaterailActivity;
 import com.example.ray.myapplication.Parsing.ParseActivity;
 import com.example.ray.myapplication.SQLite.OrderActivity;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SharedPreferences preferences;
     private boolean mIsMenuOpen = false;
     private MessageEvent messageEvent;
-
+    private OKhttp oKhttp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //SharedPreferences
         preferences = getSharedPreferences("data", Context.MODE_PRIVATE);
         preferences.edit().putInt("data", 10).apply();
+        oKhttp = new OKhttp();
 
     }
 

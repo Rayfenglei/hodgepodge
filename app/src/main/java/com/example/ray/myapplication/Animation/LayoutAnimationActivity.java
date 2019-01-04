@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -27,6 +29,9 @@ public class LayoutAnimationActivity extends AppCompatActivity implements View.O
     private int count = 0;
     private RecyclerView mRecyclerView;
     private AnimaRecycler mAnimaRecycler;
+
+    private HeaderFooterAdapter mHeaderFooterAdapter;
+
     private List<Integer> mlist = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +54,19 @@ public class LayoutAnimationActivity extends AppCompatActivity implements View.O
         //4.将LayoutTransition添加到LinearLayout
         mLinearLayout.setLayoutTransition(mlayoutTransition);
 
+        /*---------------------------------------------------------------------*/
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mAnimaRecycler=new AnimaRecycler(mlist,this);
-        mRecyclerView.setAdapter(mAnimaRecycler);
+       // mRecyclerView.setAdapter(mAnimaRecycler);
+        //添加头布局
+        mHeaderFooterAdapter = new HeaderFooterAdapter(mAnimaRecycler);
+        View headerView = LayoutInflater.from(this).inflate(R.layout.recycler_header, mRecyclerView, false);
+        View footerView = LayoutInflater.from(this).inflate(R.layout.recycler_footer, mRecyclerView, false);
+        mHeaderFooterAdapter.addFooterView(footerView);
+        mHeaderFooterAdapter.addHeaderView(headerView);
+        mRecyclerView.setAdapter(mHeaderFooterAdapter);
 
         mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -66,6 +79,16 @@ public class LayoutAnimationActivity extends AppCompatActivity implements View.O
                 }
             }
         });
+
+        //点击事件
+        mAnimaRecycler.setOnClickItemListener(new AnimaRecycler.OnItemClickListener() {
+            @Override
+            public void OnItemClick(View view) {
+                int i = mRecyclerView.getChildPosition(view);//得到position
+                Toast.makeText(LayoutAnimationActivity.this,"onItenmClick:"+i,Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
     }
 

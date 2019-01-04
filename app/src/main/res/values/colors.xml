@@ -10,4 +10,18 @@
     <color name="edittext_color">#625e59</color>
     <color name="edittext_hint_color">#ababab</color>
     <color name="cycle_image_bg">#44222222</color>
+    <color name="清漾青">#376956</color>
+    <color name="樱花紫">#C3BED4</color>
+    <color name="水墨蓝">#495A80</color>
+    <color name="color_yc">#C7DDEC</color>
+    <color name="樱草色">#E9D01D</color>
+    <color name="暗蓝紫">#9966CC</color>
+    <color name="霓虹绿">#00FF80</color>
+    <color name="麒麟色">#EEE8AB</color>
+    <color name="卡其色">#BDB76A</color>
+    <color name="雨林绿">#008573</color>
+    <color name="风草色">#DEA681</color>
+    <color name="灰褐色">#483C32</color>
+    <color name="西瓜红">#FD5B78</color>
+    <color name="夕阳红">#FE4C40</color>
 </resources>

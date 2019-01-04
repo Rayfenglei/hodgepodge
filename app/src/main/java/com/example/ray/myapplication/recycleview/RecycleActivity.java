@@ -8,11 +8,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import com.example.ray.myapplication.Animation.HeaderFooterAdapter;
 import com.example.ray.myapplication.R;
 
 import java.util.ArrayList;
@@ -22,6 +25,7 @@ public class RecycleActivity extends AppCompatActivity {
 
     List<RecycleDataBean> datas = new ArrayList<>();
     RecycleAdapter mRecycleAdapter;
+    HeaderFooterAdapter mHeaderFooterAdapter;
     private int mPosition = -1;//获取点击item的位置
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -31,6 +31,8 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration{
         }
         mOrientation = orientation;
     }
+
+    //所画的图形
     @Override
     public void onDraw(@NonNull Canvas c,@NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.onDraw(c, parent,state);
@@ -61,6 +63,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration{
     public void onDrawOver(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.onDrawOver(c, parent, state);
     }
+    //画图区域
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);

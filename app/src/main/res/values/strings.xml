@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Hodgepodge</string>
     <string name="title_activity_thread">ThreadActivity</string>
     <string name="title_activity_sql">SQLActivity</string>
     <string name="strExecute">执行SQL</string>

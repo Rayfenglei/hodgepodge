@@ -14,6 +14,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:name=".utils.MyApplication"
@@ -98,19 +100,47 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/remote_widget" />
         </receiver>
-        
+
         <provider
-            android:authorities = "cn.scu.provider"
-            android:name = ".ContentProviders.Provider"
-            />
-        
-        
+            android:name=".ContentProviders.Provider"
+            android:authorities="cn.scu.provider" />
+
         <activity android:name=".BDLocations.BDLocationActivity" />
         <activity android:name=".BDLocations.BDNavigationActivity" />
         <activity android:name=".BDLocations.NavigationActivity" />
         <activity android:name=".LocationsActivity" />
         <activity android:name=".GDLocations.GDLocationActivity" />
-        <activity android:name=".GDLocations.GDSearchActivity"></activity>
+        <activity android:name=".GDLocations.GDSearchActivity" />
+
+        <receiver android:name=".Broadcasts.CallReceiver">
+            <intent-filter>
+
+                <!-- 定义接收的广播 -->
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Broadcasts.SMSReceiver">
+            <intent-filter android:priority="1000">
+
+                <!-- 定义接收的广播,被Google隐藏的权限操作 -->
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Broadcasts.SDReceiver">
+            <intent-filter>
+
+                <!-- SD卡就绪广播 -->
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <!-- SD卡拔出广播 -->
+                <action android:name="android.intent.action.MEDIA_REMOVED" />
+                <!-- SD卡卸载广播 -->
+                <action android:name="android.intent.action.MEDIA_UNMOUNTABLE" />
+
+                <data android:scheme="file" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".OkhttpRetrofit.OkhttpRetrofitActivity"></activity>
     </application>
 
 </manifest>
