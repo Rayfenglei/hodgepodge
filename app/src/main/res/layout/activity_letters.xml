@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LettersNavigation.LettersActivity">
+
+    <RelativeLayout
+        android:background="@color/风草色"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:alpha="0.5">
+        <ImageView
+            android:id="@+id/iv_letter_seacher"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/ic_wb_iridescent_black_18dp"/>
+        <EditText
+            android:id="@+id/et_letter_seacher"
+            android:layout_toEndOf="@id/iv_letter_seacher"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:hint="@string/pleace_input_person"
+            android:lines="1"
+            />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.example.ray.myapplication.LettersNavigation.LettersView
+            android:id="@+id/letter_list"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"/>
+    </FrameLayout>
+
+</LinearLayout>

@@ -72,6 +72,8 @@ public class DownloadService extends Service {
                 downloadUrl = url;
                 downloadTask = new DownloadTask(listener);
                 //downloadTask.execute(downloadUrl);
+
+                //加入线程池
                 downloadTask.executeOnExecutor(Tasks,downloadUrl);
                 Toast.makeText(DownloadService.this, "Downloading...", Toast.LENGTH_SHORT).show();
 

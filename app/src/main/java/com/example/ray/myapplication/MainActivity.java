@@ -35,6 +35,7 @@ import com.example.ray.myapplication.BDLocations.BDNavigationActivity;
 import com.example.ray.myapplication.BDLocations.BDLocationActivity;
 import com.example.ray.myapplication.BDLocations.NavigationActivity;
 import com.example.ray.myapplication.HttpConnect.OKhttp;
+import com.example.ray.myapplication.LettersNavigation.LettersActivity;
 import com.example.ray.myapplication.MaterailU.MaterailActivity;
 import com.example.ray.myapplication.Parsing.ParseActivity;
 import com.example.ray.myapplication.SQLite.OrderActivity;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView textView1, textView2, textView3, textView4;
     private Button menubtn, mClientBtn, mBannerBtn, mLayoutBtn, mSqlBtn,mAlarmBtn;
     private Button mRecycleBtn, mThreadBtn,mDownBtn,mWebBtn, mParseBtn, mViewPagerBtn;
-    private Button mAnmationBtn, mFragmentBtn,mMaterailBtn,mLocations;
+    private Button mAnmationBtn, mFragmentBtn,mMaterailBtn,mLocations,mLetters;
     private ToggleButton toggleButton;
     private Switch aSwitch;
     //private ScrollView scrollView;
@@ -134,6 +135,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.locations_btn:
                 startActivity(new Intent(this, LocationsActivity.class));
                 break;
+            case R.id.letters_navigation_btn:
+                startActivity(new Intent(this, LettersActivity.class));
+                break;
             default:
                 break;
         }
@@ -167,6 +171,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         aSwitch = findViewById(R.id.switchbtn);
 
         mLocations = findViewById(R.id.locations_btn);
+        mLetters = findViewById(R.id.letters_navigation_btn);
         //scrollView = findViewById(R.id.scrollView);
         //textView4 = findViewById(R.id.text4);
 
@@ -189,10 +194,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAlarmBtn.setOnClickListener(this);
 
         mLocations.setOnClickListener(this);
+        mLetters.setOnClickListener(this);
     }
 
     private void viewText2Show() {
-        String s2 = "<font color='blue'><b>百度一下，你就知道~：</b></font><br>";
+        String s2 = "<font color='blue'><b>百度一下：</b></font><br>";
         s2 += "<a href = 'http://www.baidu.com'>百度</a>";
         textView2.setText(Html.fromHtml(s2));
         textView2.setMovementMethod(LinkMovementMethod.getInstance());
@@ -266,9 +272,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ObjectAnimator.ofFloat(v,"scaleY",0f,1f),
                 ObjectAnimator.ofFloat(v,"alpha",0f,1f)
                 );
-        if (radius ==500){
+        if (radius ==200){
             animatorSet.setStartDelay(50*index);
-        }else if (radius ==700){
+        }else if (radius ==350){
             animatorSet.setStartDelay(50*(index+5));
         }else {
             animatorSet.setStartDelay(50*10);
@@ -278,22 +284,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     private void doOpen()
     {
-        doAnimationOpen(mClientBtn,0,5,500);
-        doAnimationOpen(mBannerBtn,1,5,500);
-        doAnimationOpen(mLayoutBtn,2,5,500);
-        doAnimationOpen(mSqlBtn,3,5,500);
-        doAnimationOpen(mAnmationBtn,4,5,500);
+        doAnimationOpen(mClientBtn,0,5,200);
+        doAnimationOpen(mBannerBtn,1,5,200);
+        doAnimationOpen(mLayoutBtn,2,5,200);
+        doAnimationOpen(mSqlBtn,3,5,200);
+        doAnimationOpen(mAnmationBtn,4,5,200);
 
-        doAnimationOpen(mFragmentBtn,0,5,700);
-        doAnimationOpen(mRecycleBtn,1,5,700);
-        doAnimationOpen(mThreadBtn,2,5,700);
-        doAnimationOpen(mDownBtn,3,5,700);
-        doAnimationOpen(mWebBtn,4,5,700);
+        doAnimationOpen(mFragmentBtn,0,5,350);
+        doAnimationOpen(mRecycleBtn,1,5,350);
+        doAnimationOpen(mThreadBtn,2,5,350);
+        doAnimationOpen(mDownBtn,3,5,350);
+        doAnimationOpen(mWebBtn,4,5,350);
 
-        doAnimationOpen(mParseBtn,2,5,900);
-        doAnimationOpen(mMaterailBtn,1,5,900);
-        doAnimationOpen(mViewPagerBtn,3,5,900);
-        doAnimationOpen(mLocations,0,5,900);
+        doAnimationOpen(mParseBtn,2,5,500);
+        doAnimationOpen(mMaterailBtn,1,5,500);
+        doAnimationOpen(mViewPagerBtn,3,5,500);
+        doAnimationOpen(mLocations,0,5,500);
+        doAnimationOpen(mLetters,4,5,500);
     }
     private void doAnimationClose(View v, int index, int total, int radius) {
         if (v.getVisibility() != View.VISIBLE) {
@@ -314,22 +321,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     private void doClose()
     {
-        doAnimationClose(mClientBtn,0,5,500);
-        doAnimationClose(mBannerBtn,1,5,500);
-        doAnimationClose(mLayoutBtn,2,5,500);
-        doAnimationClose(mSqlBtn,3,5,500);
-        doAnimationClose(mAnmationBtn,4,5,500);
+        doAnimationClose(mClientBtn,0,5,200);
+        doAnimationClose(mBannerBtn,1,5,200);
+        doAnimationClose(mLayoutBtn,2,5,200);
+        doAnimationClose(mSqlBtn,3,5,200);
+        doAnimationClose(mAnmationBtn,4,5,200);
 
-        doAnimationClose(mFragmentBtn,0,5,700);
-        doAnimationClose(mRecycleBtn,1,5,700);
-        doAnimationClose(mThreadBtn,2,5,700);
-        doAnimationClose(mDownBtn,3,5,700);
-        doAnimationClose(mWebBtn,4,5,700);
+        doAnimationClose(mFragmentBtn,0,5,350);
+        doAnimationClose(mRecycleBtn,1,5,350);
+        doAnimationClose(mThreadBtn,2,5,350);
+        doAnimationClose(mDownBtn,3,5,350);
+        doAnimationClose(mWebBtn,4,5,350);
 
-        doAnimationClose(mParseBtn,2,5,900);
-        doAnimationClose(mMaterailBtn,1,5,900);
-        doAnimationClose(mViewPagerBtn,3,5,900);
-        doAnimationClose(mLocations,0,5,900);
+        doAnimationClose(mParseBtn,2,5,500);
+        doAnimationClose(mMaterailBtn,1,5,500);
+        doAnimationClose(mViewPagerBtn,3,5,500);
+        doAnimationClose(mLocations,0,5,500);
+        doAnimationClose(mLetters,4,5,500);
     }
 
     /*

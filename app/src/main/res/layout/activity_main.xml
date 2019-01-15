@@ -241,6 +241,15 @@
             android:textAllCaps="false"
             android:layout_gravity="left|bottom"
             android:visibility="gone"/>
+        <Button
+            android:id="@+id/letters_navigation_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/menubtn"
+            android:text="letters"
+            android:textAllCaps="false"
+            android:layout_gravity="left|bottom"
+            android:visibility="gone"/>
     </FrameLayout>
 
 

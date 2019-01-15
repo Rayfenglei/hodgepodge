@@ -18,4 +18,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_get_ywn_news">GetYwnNewsActivity</string>
+    <string name="pleace_input_person">请输入联系人</string>
 </resources>

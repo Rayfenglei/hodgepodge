@@ -140,7 +140,11 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".OkhttpRetrofit.OkhttpRetrofitActivity"></activity>
+        <activity android:name=".OkhttpRetrofit.OkhttpRetrofitActivity" />
+        <activity
+            android:name=".GetYwnNewsActivity"
+            android:label="@string/title_activity_get_ywn_news" />
+        <activity android:name=".LettersNavigation.LettersActivity"></activity>
     </application>
 
 </manifest>

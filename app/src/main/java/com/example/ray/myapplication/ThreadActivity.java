@@ -82,6 +82,13 @@ public class ThreadActivity extends Activity {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            //开启UI线程 更新UI操作
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                }
+            });
         }
 
     }
