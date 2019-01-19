@@ -40,7 +40,7 @@
 
         <service android:name="com.amap.api.location.APSService" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".UIView.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,50 +48,50 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".recycleview.RecycleActivity"
+            android:name=".UIView.recycleview.RecycleActivity"
             android:label="RecycleActivity"
             android:theme="@style/NoAppTheme" />
-        <activity android:name=".ClientActivity" />
+        <activity android:name=".NetWork.ClientActivity" />
         <activity
-            android:name=".ThreadActivity"
+            android:name=".Function.ThreadActivity"
             android:label="@string/title_activity_thread" />
         <activity
-            android:name=".SQLite.OrderActivity"
+            android:name=".DataParse.SQLite.OrderActivity"
             android:label="@string/title_activity_sql" />
         <activity
-            android:name=".Animation.AnimationActivity"
+            android:name=".UIView.Animation.AnimationActivity"
             android:label="@string/title_activity_animation" />
-        <activity android:name=".Animation.LayoutAnimationActivity" />
-        <activity android:name=".Fragments.FragmentsActivity" />
-        <activity android:name=".Download.DownloadActivity" />
+        <activity android:name=".UIView.Animation.LayoutAnimationActivity" />
+        <activity android:name=".UIView.Fragments.FragmentsActivity" />
+        <activity android:name=".NetWork.Download.DownloadActivity" />
 
         <service
-            android:name=".Download.DownloadService"
+            android:name=".NetWork.Download.DownloadService"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".Web.GetUrlActivity" />
-        <activity android:name=".Parsing.ParseActivity" />
+        <activity android:name=".UIView.Web.GetUrlActivity" />
+        <activity android:name=".DataParse.Parsing.ParseActivity" />
         <activity
-            android:name=".MaterailU.MaterailActivity"
+            android:name=".UIView.MaterailU.MaterailActivity"
             android:theme="@style/NoAppTheme" />
 
         <receiver
-            android:name=".AlarmManager.MyReceiver"
+            android:name=".Function.AlarmManager.MyReceiver"
             android:enabled="true"
             android:exported="true" />
         <receiver
-            android:name=".AlarmManager.MyReceiver2"
+            android:name=".Function.AlarmManager.MyReceiver2"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".AlarmManager.AlarmSearchActivity" />
-        <activity android:name=".ViewPagerActivity" />
-        <activity android:name=".BannerView.BannerActivity" />
+        <activity android:name=".Function.AlarmManager.AlarmSearchActivity" />
+        <activity android:name=".UIView.Fragments.ViewPagerActivity" />
+        <activity android:name=".UIView.BannerView.BannerActivity" />
 
-        <service android:name=".RemoteViews.TimerService" />
+        <service android:name=".UIView.RemoteViews.TimerService" />
 
-        <receiver android:name=".RemoteViews.WidgetProvider">
+        <receiver android:name=".UIView.RemoteViews.WidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -102,15 +102,15 @@
         </receiver>
 
         <provider
-            android:name=".ContentProviders.Provider"
+            android:name=".DataParse.ContentProviders.Provider"
             android:authorities="cn.scu.provider" />
 
-        <activity android:name=".BDLocations.BDLocationActivity" />
-        <activity android:name=".BDLocations.BDNavigationActivity" />
-        <activity android:name=".BDLocations.NavigationActivity" />
-        <activity android:name=".LocationsActivity" />
-        <activity android:name=".GDLocations.GDLocationActivity" />
-        <activity android:name=".GDLocations.GDSearchActivity" />
+        <activity android:name=".MapView.BDLocations.BDLocationActivity" />
+        <activity android:name=".MapView.BDLocations.BDNavigationActivity" />
+        <activity android:name=".MapView.BDLocations.NavigationActivity" />
+        <activity android:name=".MapView.LocationsActivity" />
+        <activity android:name=".MapView.GDLocations.GDLocationActivity" />
+        <activity android:name=".MapView.GDLocations.GDSearchActivity" />
 
         <receiver android:name=".Broadcasts.CallReceiver">
             <intent-filter>
@@ -140,11 +140,12 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".OkhttpRetrofit.OkhttpRetrofitActivity" />
+        <activity android:name=".NetWork.OkhttpRetrofit.OkhttpRetrofitActivity" />
         <activity
-            android:name=".GetYwnNewsActivity"
+            android:name=".Function.News.GetYwnNewsActivity"
             android:label="@string/title_activity_get_ywn_news" />
-        <activity android:name=".LettersNavigation.LettersActivity"></activity>
+        <activity android:name=".UIView.LettersNavigation.LettersActivity" />
+        <activity android:name=".Function.Calendar.CalendarActivity"></activity>
     </application>
 
 </manifest>

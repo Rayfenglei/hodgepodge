@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AlarmManager.AlarmSearchActivity">
+    tools:context=".Function.AlarmManager.AlarmSearchActivity">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LettersNavigation.LettersActivity">
+    tools:context=".UIView.LettersNavigation.LettersActivity">
 
     <RelativeLayout
         android:background="@color/风草色"
@@ -34,7 +34,7 @@
         android:layout_height="match_parent">
 
 
-        <com.example.ray.myapplication.LettersNavigation.LettersView
+        <com.example.ray.myapplication.UIView.LettersNavigation.LettersView
             android:id="@+id/letter_list"
             android:layout_width="30dp"
             android:layout_height="match_parent"
