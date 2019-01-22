@@ -39,13 +39,17 @@
             android:value="05926b8b78e99fc83af48e59f2e51e04" />
 
         <service android:name="com.amap.api.location.APSService" />
-
-        <activity android:name=".UIView.MainActivity">
+        <activity
+            android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".UIView.MainActivity"
+            android:theme="@style/NoAppTheme">
+
         </activity>
         <activity
             android:name=".UIView.recycleview.RecycleActivity"
@@ -145,7 +149,8 @@
             android:name=".Function.News.GetYwnNewsActivity"
             android:label="@string/title_activity_get_ywn_news" />
         <activity android:name=".UIView.LettersNavigation.LettersActivity" />
-        <activity android:name=".Function.Calendar.CalendarActivity"></activity>
+        <activity android:name=".Function.Calendar.CalendarActivity" />
+
     </application>
 
 </manifest>
