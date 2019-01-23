@@ -41,6 +41,7 @@ import com.example.ray.myapplication.R;
 import com.example.ray.myapplication.DataParse.SQLite.OrderActivity;
 import com.example.ray.myapplication.Function.ThreadActivity;
 import com.example.ray.myapplication.UIView.Fragments.ViewPagerActivity;
+import com.example.ray.myapplication.UIView.StickyRecycler.StickyRecyclerActivity;
 import com.example.ray.myapplication.UIView.Web.GetUrlActivity;
 import com.example.ray.myapplication.UIView.recycleview.RecycleActivity;
 
@@ -48,7 +49,7 @@ import com.example.ray.myapplication.UIView.recycleview.RecycleActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView textView1, textView2, textView3, textView4;
-    private Button menubtn, mClientBtn, mBannerBtn, mLayoutBtn, mSqlBtn,mAlarmBtn;
+    private Button menubtn, mClientBtn, mBannerBtn, mLayoutBtn, mSqlBtn,mAlarmBtn,mSticky;
     private Button mRecycleBtn, mThreadBtn,mDownBtn,mWebBtn, mParseBtn, mViewPagerBtn;
     private Button mAnmationBtn, mFragmentBtn,mMaterailBtn,mLocations,mLetters;
     private ToggleButton toggleButton;
@@ -140,6 +141,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.letters_navigation_btn:
                 startActivity(new Intent(this, LettersActivity.class));
                 break;
+            case R.id.sticky_recycler_btn:
+                startActivity(new Intent(this, StickyRecyclerActivity.class));
+                break;
             default:
                 break;
         }
@@ -176,6 +180,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mLetters = findViewById(R.id.letters_navigation_btn);
         //scrollView = findViewById(R.id.scrollView);
         //textView4 = findViewById(R.id.text4);
+        mSticky = findViewById(R.id.sticky_recycler_btn);
 
         menubtn.setOnClickListener(this);
         mClientBtn.setOnClickListener(this);
@@ -197,6 +202,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mLocations.setOnClickListener(this);
         mLetters.setOnClickListener(this);
+        mSticky.setOnClickListener(this);
     }
 
     private void viewText2Show() {

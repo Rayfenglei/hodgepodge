@@ -24,7 +24,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/NoAppTheme"
+        >
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="g1ttLioC9R3CB5e79ehHgacvyEb7Bact" />
@@ -40,7 +41,8 @@
 
         <service android:name="com.amap.api.location.APSService" />
         <activity
-            android:name=".SplashActivity">
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -150,6 +152,7 @@
             android:label="@string/title_activity_get_ywn_news" />
         <activity android:name=".UIView.LettersNavigation.LettersActivity" />
         <activity android:name=".Function.Calendar.CalendarActivity" />
+        <activity android:name=".UIView.StickyRecycler.StickyRecyclerActivity" />
 
     </application>
 
