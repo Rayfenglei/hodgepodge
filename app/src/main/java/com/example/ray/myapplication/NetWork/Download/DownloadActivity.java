@@ -20,9 +20,14 @@ public class DownloadActivity extends AppCompatActivity implements View.OnClickL
 
     private Button mStartBtn,mStopBtn,mCancleBtn;
     private DownloadService.DownloadBinder downloadBinder;
+    /* ServiceConnection代表与服务的连接，它只有两个方法：onServiceConnected和onServiceDisconnected，
+    前者是在操作者在连接一个服务成功时被调用，而后者是在服务崩溃或被杀死导致的连接中断时被调用 */
     private ServiceConnection serviceConnection = new ServiceConnection() {
+        /* onServiceConnected 绑定服务的时候被回调，在这个方法获取绑定Service传递过来的IBinder对象，
+        通过这个IBinder对象，实现宿主和Service的交互。 */
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            // 获取Binder
             downloadBinder = (DownloadService.DownloadBinder) iBinder;
         }
 

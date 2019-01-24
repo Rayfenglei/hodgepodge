@@ -7,6 +7,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -62,7 +63,8 @@ public class RecycleActivity extends AppCompatActivity {
                 Toast.makeText(RecycleActivity.this,"onItenmLongClick:"+mPosition,Toast.LENGTH_SHORT).show();
             }
         });
-
+        ItemTouchHelper helper = new ItemTouchHelper(new RecyclerItemTouchCallback(mRecycleAdapter,datas));
+        helper.attachToRecyclerView(recyclerView);
         /*
 
         //通过代码设置LayoutAnimation
