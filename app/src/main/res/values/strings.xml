@@ -21,4 +21,9 @@
     <string name="title_activity_get_ywn_news">GetYwnNewsActivity</string>
     <string name="pleace_input_person">请输入联系人</string>
     <string name="title_activity_splash">SplashActivity</string>
+
+    <string name="edit">编辑</string>
+    <string name="finish">完成</string>
+    <string name="sticky_recycler_bt">StickyBt</string>
+    <string name="move_recycler_bt">MoveBt</string>
 </resources>

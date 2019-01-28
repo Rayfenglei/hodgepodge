@@ -41,6 +41,7 @@ import com.example.ray.myapplication.R;
 import com.example.ray.myapplication.DataParse.SQLite.OrderActivity;
 import com.example.ray.myapplication.Function.ThreadActivity;
 import com.example.ray.myapplication.UIView.Fragments.ViewPagerActivity;
+import com.example.ray.myapplication.UIView.RecyclerMove.RecyclerMoveActivity;
 import com.example.ray.myapplication.UIView.StickyRecycler.StickyRecyclerActivity;
 import com.example.ray.myapplication.UIView.Web.GetUrlActivity;
 import com.example.ray.myapplication.UIView.recycleview.RecycleActivity;
@@ -49,7 +50,7 @@ import com.example.ray.myapplication.UIView.recycleview.RecycleActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView textView1, textView2, textView3, textView4;
-    private Button menubtn, mClientBtn, mBannerBtn, mLayoutBtn, mSqlBtn,mAlarmBtn,mSticky;
+    private Button menubtn, mClientBtn, mBannerBtn, mLayoutBtn, mSqlBtn,mAlarmBtn,mSticky,mMove;
     private Button mRecycleBtn, mThreadBtn,mDownBtn,mWebBtn, mParseBtn, mViewPagerBtn;
     private Button mAnmationBtn, mFragmentBtn,mMaterailBtn,mLocations,mLetters;
     private ToggleButton toggleButton;
@@ -144,6 +145,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.sticky_recycler_btn:
                 startActivity(new Intent(this, StickyRecyclerActivity.class));
                 break;
+            case R.id.move_recycler_btn:
+                startActivity(new Intent(this, RecyclerMoveActivity.class));
             default:
                 break;
         }
@@ -181,6 +184,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //scrollView = findViewById(R.id.scrollView);
         //textView4 = findViewById(R.id.text4);
         mSticky = findViewById(R.id.sticky_recycler_btn);
+        mMove = findViewById(R.id.move_recycler_btn);
 
         menubtn.setOnClickListener(this);
         mClientBtn.setOnClickListener(this);
@@ -203,6 +207,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mLocations.setOnClickListener(this);
         mLetters.setOnClickListener(this);
         mSticky.setOnClickListener(this);
+        mMove.setOnClickListener(this);
     }
 
     private void viewText2Show() {
