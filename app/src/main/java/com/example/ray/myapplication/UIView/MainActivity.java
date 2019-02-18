@@ -31,6 +31,7 @@ import com.example.ray.myapplication.UIView.BannerView.BannerActivity;
 import com.example.ray.myapplication.Bean.MessageEvent;
 import com.example.ray.myapplication.NetWork.ClientActivity;
 import com.example.ray.myapplication.NetWork.Download.DownloadActivity;
+import com.example.ray.myapplication.UIView.Dialogs.DialogsActivity;
 import com.example.ray.myapplication.UIView.Fragments.FragmentsActivity;
 import com.example.ray.myapplication.NetWork.HttpConnect.OKhttp;
 import com.example.ray.myapplication.UIView.LettersNavigation.LettersActivity;
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView textView1, textView2, textView3, textView4;
     private Button menubtn, mClientBtn, mBannerBtn, mLayoutBtn, mSqlBtn,mAlarmBtn,mSticky,mMove;
     private Button mRecycleBtn, mThreadBtn,mDownBtn,mWebBtn, mParseBtn, mViewPagerBtn;
-    private Button mAnmationBtn, mFragmentBtn,mMaterailBtn,mLocations,mLetters;
+    private Button mAnmationBtn, mFragmentBtn,mMaterailBtn,mLocations,mLetters,btDialog;
     private ToggleButton toggleButton;
     private Switch aSwitch;
     //private ScrollView scrollView;
@@ -92,6 +93,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.client_btn:
                 startActivity(new Intent(this, ClientActivity.class));
+                //添加activity启动和退出动画，必须在startActivity之后 或者在finish()中super.finish()之后
+                //overridePendingTransition(R.anim.enter_anima,R.anim.out_anima);
                 break;
             case R.id.banner_btn:
                 startActivity(new Intent(this, BannerActivity.class));
@@ -147,6 +150,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.move_recycler_btn:
                 startActivity(new Intent(this, RecyclerMoveActivity.class));
+            case R.id.bt_dialog_list:
+                startActivity(new Intent(this, DialogsActivity.class));
             default:
                 break;
         }
@@ -185,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //textView4 = findViewById(R.id.text4);
         mSticky = findViewById(R.id.sticky_recycler_btn);
         mMove = findViewById(R.id.move_recycler_btn);
+        btDialog = findViewById(R.id.bt_dialog_list);
 
         menubtn.setOnClickListener(this);
         mClientBtn.setOnClickListener(this);
@@ -208,6 +214,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mLetters.setOnClickListener(this);
         mSticky.setOnClickListener(this);
         mMove.setOnClickListener(this);
+        btDialog.setOnClickListener(this);
     }
 
     private void viewText2Show() {

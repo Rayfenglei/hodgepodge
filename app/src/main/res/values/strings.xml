@@ -26,4 +26,12 @@
     <string name="finish">完成</string>
     <string name="sticky_recycler_bt">StickyBt</string>
     <string name="move_recycler_bt">MoveBt</string>
+
+    <string name="bt_dialog">Dialogs</string>
+    <string name="narmal_dialog">normal</string>
+    <string name="list_dialog">list</string>
+    <string name="single_choice_dialog">single choice</string>
+    <string name="multi_choice_dialog">multi choice</string>
+    <string name="edit_dialog">edit</string>
+    <string name="define_dialog">define</string>
 </resources>

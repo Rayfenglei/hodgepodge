@@ -25,6 +25,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoAppTheme">
+        <activity android:name=".UIView.Dialogs.DialogsActivity"></activity>
+
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="g1ttLioC9R3CB5e79ehHgacvyEb7Bact" />
@@ -51,7 +53,7 @@
         </activity>
         <activity
             android:name=".UIView.MainActivity"
-            android:theme="@style/NoAppTheme"></activity>
+            android:theme="@style/NoAppTheme" />
         <activity
             android:name=".UIView.recycleview.RecycleActivity"
             android:label="RecycleActivity"
@@ -152,7 +154,7 @@
         <activity android:name=".UIView.LettersNavigation.LettersActivity" />
         <activity android:name=".Function.Calendar.CalendarActivity" />
         <activity android:name=".UIView.StickyRecycler.StickyRecyclerActivity" />
-        <activity android:name=".UIView.RecyclerMove.RecyclerMoveActivity"></activity>
+        <activity android:name=".UIView.RecyclerMove.RecyclerMoveActivity" />
     </application>
 
 </manifest>
