@@ -71,16 +71,32 @@
             android:text="@string/move_recycler_bt"
             android:textAllCaps="false"
             />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
         <Button
             android:id="@+id/bt_dialog_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bt_dialog"
             android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/bt_bottom_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bt_dialog"
+            android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/bt_bottom_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bt_dialog"
+            android:textAllCaps="false"/>
     </LinearLayout>
-
-
-
 
 
     <ToggleButton

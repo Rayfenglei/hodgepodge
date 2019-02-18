@@ -31,6 +31,8 @@ import com.example.ray.myapplication.UIView.BannerView.BannerActivity;
 import com.example.ray.myapplication.Bean.MessageEvent;
 import com.example.ray.myapplication.NetWork.ClientActivity;
 import com.example.ray.myapplication.NetWork.Download.DownloadActivity;
+import com.example.ray.myapplication.UIView.BottomNavigation.BottomRadioActivity;
+import com.example.ray.myapplication.UIView.BottomNavigation.BottomTabActivity;
 import com.example.ray.myapplication.UIView.Dialogs.DialogsActivity;
 import com.example.ray.myapplication.UIView.Fragments.FragmentsActivity;
 import com.example.ray.myapplication.NetWork.HttpConnect.OKhttp;
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button menubtn, mClientBtn, mBannerBtn, mLayoutBtn, mSqlBtn,mAlarmBtn,mSticky,mMove;
     private Button mRecycleBtn, mThreadBtn,mDownBtn,mWebBtn, mParseBtn, mViewPagerBtn;
     private Button mAnmationBtn, mFragmentBtn,mMaterailBtn,mLocations,mLetters,btDialog;
+    private Button mRadioBtn,mTabLayoutBtn;
     private ToggleButton toggleButton;
     private Switch aSwitch;
     //private ScrollView scrollView;
@@ -150,8 +153,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.move_recycler_btn:
                 startActivity(new Intent(this, RecyclerMoveActivity.class));
+                break;
             case R.id.bt_dialog_list:
                 startActivity(new Intent(this, DialogsActivity.class));
+                break;
+            case R.id.bt_bottom_radio:
+                startActivity(new Intent(this, BottomRadioActivity.class));
+                break;
+            case R.id.bt_bottom_tab:
+                startActivity(new Intent(this, BottomTabActivity.class));
+                break;
             default:
                 break;
         }
@@ -191,6 +202,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSticky = findViewById(R.id.sticky_recycler_btn);
         mMove = findViewById(R.id.move_recycler_btn);
         btDialog = findViewById(R.id.bt_dialog_list);
+        mRadioBtn = findViewById(R.id.bt_bottom_radio);
+        mTabLayoutBtn = findViewById(R.id.bt_bottom_tab);
 
         menubtn.setOnClickListener(this);
         mClientBtn.setOnClickListener(this);
@@ -215,6 +228,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSticky.setOnClickListener(this);
         mMove.setOnClickListener(this);
         btDialog.setOnClickListener(this);
+        mRadioBtn.setOnClickListener(this);
+        mTabLayoutBtn.setOnClickListener(this);
     }
 
     private void viewText2Show() {

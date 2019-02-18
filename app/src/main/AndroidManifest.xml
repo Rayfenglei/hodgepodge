@@ -25,7 +25,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoAppTheme">
-        <activity android:name=".UIView.Dialogs.DialogsActivity"></activity>
+        <activity android:name=".UIView.BottomNavigation.BottomTabActivity"></activity>
+        <activity android:name=".UIView.BottomNavigation.BottomRadioActivity" />
+        <activity android:name=".UIView.Dialogs.DialogsActivity" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"

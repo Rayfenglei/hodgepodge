@@ -34,4 +34,13 @@
     <string name="multi_choice_dialog">multi choice</string>
     <string name="edit_dialog">edit</string>
     <string name="define_dialog">define</string>
+
+    <string name="tab_my">我的</string>
+    <string name="tab_food">美食</string>
+    <string name="tab_track">足迹</string>
+    <string name="tab_strategy">攻略</string>
+    <string name="title_activity_bottom_na">BottomNaActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
