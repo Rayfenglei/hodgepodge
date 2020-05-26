@@ -8,6 +8,8 @@ import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 
+import com.amap.api.location.AMapLocationClient;
+import com.amap.api.location.AMapLocationListener;
 import com.example.ray.myapplication.UIView.MainActivity;
 
 import java.util.ArrayList;

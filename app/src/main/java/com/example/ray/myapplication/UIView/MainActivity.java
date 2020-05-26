@@ -25,6 +25,7 @@ import android.widget.ToggleButton;
 import org.greenrobot.eventbus.EventBus;
 
 import com.example.ray.myapplication.Function.AlarmManager.AlarmSearchActivity;
+import com.example.ray.myapplication.Function.News.GetYwnNewsActivity;
 import com.example.ray.myapplication.UIView.Animation.AnimationActivity;
 import com.example.ray.myapplication.UIView.Animation.LayoutAnimationActivity;
 import com.example.ray.myapplication.UIView.BannerView.BannerActivity;
@@ -76,7 +77,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //SharedPreferences
         preferences = getSharedPreferences("data", Context.MODE_PRIVATE);
-        preferences.edit().putInt("data", 10).apply();
+        //处于可编辑
+        SharedPreferences.Editor editor = preferences.edit();
+        //存放数据
+        editor.putInt("data", 10);
+        //提交数据
+        editor.apply();
+
         oKhttp = new OKhttp();
 
     }
@@ -95,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.client_btn:
-                startActivity(new Intent(this, ClientActivity.class));
+                startActivity(new Intent(this, GetYwnNewsActivity.class));
                 //添加activity启动和退出动画，必须在startActivity之后 或者在finish()中super.finish()之后
                 //overridePendingTransition(R.anim.enter_anima,R.anim.out_anima);
                 break;

@@ -83,4 +83,5 @@ public class DefineView extends View {
             setMeasuredDimension(widthSpecSize,mHeight);
         }
     }
+
 }

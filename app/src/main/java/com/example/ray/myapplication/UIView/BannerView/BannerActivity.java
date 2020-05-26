@@ -169,7 +169,6 @@ public class BannerActivity extends AppCompatActivity {
         // 1. 返回要显示的条目内容, 创建条目
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            System.out.println("instantiateItem初始化: " + position);
             // container: 容器: ViewPager
             // position: 当前要显示条目的位置 0 -> 4
 

@@ -116,13 +116,14 @@ public class GDLocationActivity extends AppCompatActivity implements View.OnClic
 
     private void gaodeLocatoin(){
         //定位
-        GDLocationUtil.getInstance(MyApplication.getContext()).clearInstance();
+
         GDLocationUtil.getInstance(MyApplication.getContext()).setOnLocationResultListener(new GDLocationUtil.OnLocationResultListener() {
             @Override
             public void onLocationResult(AMapLocation location) {
                 //得到定位信息
                 Log.i(TAG,"定位信息 "+location.getLatitude()+" "+location.getLongitude());
                 GDLocationUtil.getInstance(MyApplication.getContext()).stopLocation();
+                GDLocationUtil.getInstance(MyApplication.getContext()).clearInstance();
             }
 
         });
